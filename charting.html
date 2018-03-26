@@ -20,7 +20,7 @@
             // The data for our dataset
 
             data: {
-                labels: ["First", "February"],
+                labels: ["",""],
                 datasets: [
                     //1st data set
                     {
@@ -81,7 +81,8 @@
                     }],
                     yAxes: [{
                         stacked: true,
-                        barThickness : 12,
+                        barThickness : 10,
+                        maxBarThickness: 10,    
                             gridLines: {
                                 display:false
                             }
@@ -197,15 +198,15 @@
         <div class="row">
             <div class="col-lg-4 col-sm-12">
             <canvas id="myChart"></canvas>
-            <p class="down">hi</p>
+            <p class="down"></p>
             </div>
             <div class="col-lg-4 col-sm-12">
             <canvas id="myChart2"  style="height: 30px; width: 60px;"></canvas>
-            <p class="down">hi</p>
+            <p class="down"></p>
             </div>
             <div class="col-lg-4 col-sm-12">
             <canvas id="myChart3" style="height: 30px; width: 60px;"></canvas>
-            <p class="down">hi</p>
+            <p class="down"></p>
             </div>
         </div>
     </div>

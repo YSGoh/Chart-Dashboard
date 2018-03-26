@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+    <style>
+    .down{
+        padding-left: 55px;
+    }
+
+    .legend{
+        list-style-image: url('http://www.emoji.co.uk/view/2225/');
+    }
+    </style>
+
+    <script>
+        function getChart(){
+            var chartData = {
+                datasets: [{
+
+                }]
+            }
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'horizontalBar',
+            // The data for our dataset
+            data: {
+                labels: ["First", "February"],
+                datasets: [
+                    //1st data set
+                    {
+                    label: "Expenses",
+                    data: [10, 0],
+                    backgroundColor: [
+                        'rgb(245, 97, 59)',
+                        ],
+                    borderColor: [
+                        'rgba(245, 97, 59, 0.8)'
+                        ],
+                    },
+                    
+                    //2nd data set
+                    {
+                    label: "Cash Flow",
+                    data: [15, 0],
+                    backgroundColor: [
+                        'rgb(245, 222, 47)',
+                    ],
+                    borderColor: [
+                        'rgba(245, 222, 47)',
+                    ],                                  
+            },
+
+                    //3rd data set
+                    {
+                    label: "Passive Income",
+                    data: [0, 10],
+                    backgroundColor: [
+                        'rgb(169, 245, 47)',
+                        'rgb(169, 245, 47)'
+                    ],
+                    borderColor: [
+                        'rgb(169, 245, 47)',
+                    ],                                 
+                }]
+            },
+        
+            // Configuration options go here
+            options: {
+                responsive:true,
+                fullWidth: true,
+                title: {
+                    display:true,
+                    text: 'Net Cash Flow',
+                    position:'top'
+                },
+                scales: {
+                    xAxes: [{
+                        stacked: true,
+                            gridLines: {
+                                display:false
+                            },
+                            ticks:{
+                                    beginAtZero: true
+                                }
+                    }],
+                    yAxes: [{
+                        stacked: true,
+                        barThickness : 12,
+                            gridLines: {
+                                display:false
+                            }
+                    }]
+                },
+                legend:{
+                    position: 'top',
+                        labels:{
+                            boxWidth: 12
+                        }
+                }
+            }
+        });
+        }
+
+        function getChart2(){
+            var ctx = document.getElementById('myChart2').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+        
+            // The data for our dataset
+            data: {
+                labels: ["Fixed Deposit", "Liquid Asset"],
+                datasets: [{
+                    label: "My First dataset",
+                    backgroundColor: [
+                        'rgb(145, 227, 96)',
+                        'rgb(34, 180, 247)'
+                        ],
+                    borderColor: [
+                        'rgb(145, 227, 96)',
+                        'rgb(34, 180, 247)'
+                        ],
+                    data: [50, 10],
+                }]
+            },
+        
+            // Configuration options go here
+            options: {
+                responsive:true,
+                cutoutPercentage: 90,
+                fullWidth: true,
+                title: {
+                    display:true,
+                    text: 'Cash On Hand',
+                    position:'top'
+                },
+                    legend: {
+                        display: true,
+                        position: 'right',
+                            labels: {
+                                usePointStyle: true
+                        }
+                    }
+                }
+        });
+        }
+        function getChart3(){
+            var ctx = document.getElementById('myChart3').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+        
+            // The data for our dataset
+            data: {
+                labels: ["Unit Trust", "House", "Share", "Insurance", "Share"],
+                datasets: [{
+                    label: "My First dataset",
+                    backgroundColor: [
+                        'rgb(72, 116, 246)',
+                        'rgb(84, 31, 181)',
+                        'rgb(191, 240, 42)',
+                        'rgb(254, 156, 62)',
+                        'rgb(238, 74, 85)'
+                        ],
+                    borderColor: [
+                        'rgb(72, 116, 246)',
+                        'rgb(84, 31, 181)',
+                        'rgb(191, 240, 42)',
+                        'rgb(254, 156, 62)',
+                        'rgb(238, 74, 85)'
+                        ],
+                    data: [0, 10, 5, 2, 20],
+                }]
+            },
+        
+            // Configuration options go here
+            options: {
+                responsive:true,
+                cutoutPercentage: 60,
+                title: {
+                    display:true,
+                    text: 'Your Capital',
+                    position:'top'
+                },
+                    legend:{
+                        position:'right',
+                        align: 'center',
+                        labels: {
+                                usePointStyle: true,
+                                fontSize: 11
+                        }
+                    }
+                }
+            });
+        }
+        </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+            <canvas id="myChart"></canvas>
+            <p class="down">hi</p>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+            <canvas id="myChart2"  style="height: 30px; width: 60px;"></canvas>
+            <p class="down">hi</p>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+            <canvas id="myChart3" style="height: 30px; width: 60px;"></canvas>
+            <p class="down">hi</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-none d-xl-block" style="z-index: 2; position: absolute; top: 13.5%; left: 43.75%;">
+        xl halo
+    </div>
+    <div class="d-none d-lg-block d-xl-none" style="z-index: 2; position: absolute; top: 12.5%; left: 14%;">
+        lg halo
+    </div>
+    <div class="d-none d-md-block d-lg-none" style="z-index: 2; position: absolute; top: 38.5%; left: 40.5%;">
+        md halo
+    </div>
+    <div class="d-none d-sm-block d-md-none" style="z-index: 2; position: absolute; top: 22.5%; left: 35.75%;">
+        small halo
+    </div>
+    <div class="d-block d-sm-none" style="z-index: 2; position: absolute; top: 49.75%; left: 22.75%;">
+        xs halo
+    </div>
+
+    <script>   
+        getChart();
+        getChart2();
+        getChart3();
+    </script>
+</body>
+</html>

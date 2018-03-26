@@ -9,24 +9,16 @@
     .down{
         padding-left: 55px;
     }
-
-    .legend{
-        list-style-image: url('http://www.emoji.co.uk/view/2225/');
-    }
     </style>
-
+    
     <script>
         function getChart(){
-            var chartData = {
-                datasets: [{
-
-                }]
-            }
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
             // The type of chart we want to create
             type: 'horizontalBar',
             // The data for our dataset
+            
             data: {
                 labels: ["First", "February"],
                 datasets: [
